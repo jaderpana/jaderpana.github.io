@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jade Pana · Computing Science graduate student</title>
+  <meta name="description" content="Computing Science graduate student at the University of Alberta, focused on how generative AI regulation gets put into practice in education and healthcare.">
+  <meta name="author" content="Jade Pana">
+  <link rel="canonical" href="https://jaderpana.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Jade Pana · Computing Science graduate student">
+  <meta property="og:description" content="Computing Science graduate student at the University of Alberta, focused on how generative AI regulation gets put into practice in education and healthcare.">
+  <meta property="og:url" content="https://jaderpana.github.io/">
+  <meta property="og:site_name" content="Jade Pana">
+  <meta property="profile:first_name" content="Jade">
+  <meta property="profile:last_name" content="Pana">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="me" href="https://www.linkedin.com/in/jadepana/">
+  <link rel="me" href="https://github.com/jaderpana">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #b3473f;        /* warm coral-red */
+      --accent-dark: #8f3530;
+      --accent-soft: #fbeae6;
+      --ink: #2b2523;
+      --muted: #6b605c;
+      --bg: #fffaf6;
+      --card: #ffffff;
+      --line: #eedfd8;
+      --mark: #ffeb3b;
+      --radius: 14px;
+      --max: 44rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent: #f08a7e;
+        --accent-dark: #f6a99f;
+        --accent-soft: #3a2422;
+        --ink: #f4ece8;
+        --muted: #c2b5b0;
+        --bg: #1d1918;
+        --card: #262120;
+        --line: #3b3230;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { color: var(--accent-dark); }
+    a:focus-visible, .button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+    mark {
+      background: var(--mark);
+      color: #2b2523;
+      padding: 0 .25em;
+      border-radius: 4px;
+    }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+    /* ---------- Header / first screen ---------- */
+    header.hero {
+      min-height: 88vh;
+      min-height: 88svh;
+      display: flex;
+      align-items: center;
+      padding: 3rem 0;
+    }
+    .eyebrow {
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .8rem;
+      color: var(--accent);
+      margin: 0 0 .75rem;
+    }
+    h1, h2, h3 {
+      font-family: "Fraunces", Georgia, serif;
+      line-height: 1.15;
+      margin: 0;
+    }
+    h1 { font-size: clamp(2.6rem, 9vw, 4rem); letter-spacing: -.01em; }
+    .one-liner {
+      font-size: clamp(1.15rem, 3.6vw, 1.35rem);
+      color: var(--muted);
+      margin: 1rem 0 2rem;
+      max-width: 36rem;
+    }
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: .9rem 1.5rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(179, 71, 63, .25);
+      transition: transform .15s ease, background .15s ease;
+    }
+    @media (prefers-color-scheme: dark) { .button { color: #1d1918; } }
+    .button:hover { background: var(--accent-dark); color: #fff; transform: translateY(-1px); }
+    @media (prefers-color-scheme: dark) { .button:hover { color: #1d1918; } }
+    .button-note { display: block; margin-top: .75rem; font-size: .9rem; color: var(--muted); }
+
+    .now {
+      margin-top: 2.5rem;
+      padding: .85rem 1.1rem;
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: .98rem;
+    }
+    .now strong { color: var(--accent); }
+
+    /* ---------- Sections ---------- */
+    section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 1.85rem; margin-bottom: 1.5rem; }
+
+    .featured-list { display: grid; gap: 1.25rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.4rem 1.2rem;
+    }
+    .card h3 { font-size: 1.3rem; }
+    .card .meta { color: var(--muted); font-size: .92rem; margin: .25rem 0 1rem; }
+    .card dl { margin: 0; }
+    .card dt {
+      font-weight: 700;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
+      margin-top: .9rem;
+    }
+    .card dt:first-child { margin-top: 0; }
+    .card dd { margin: .2rem 0 0; }
+
+    .work-list { list-style: none; margin: 0; padding: 0; }
+    .work-list li {
+      display: grid;
+      grid-template-columns: 8.5rem 1fr;
+      gap: .25rem 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .work-list li:last-child { border-bottom: 0; }
+    .work-date { color: var(--muted); font-size: .92rem; font-variant-numeric: tabular-nums; }
+    @media (max-width: 34rem) {
+      .work-list li { grid-template-columns: 1fr; }
+    }
+
+    .about p { margin: 0; max-width: 38rem; }
+
+    .contact-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .contact-links a {
+      display: inline-block;
+      padding: .55rem 1.1rem;
+      border: 2px solid var(--accent);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact-links a:hover { background: var(--accent-soft); }
+
+    footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Computing Science · University of Alberta</p>
+      <h1>Jade Pana</h1>
+      <p class="one-liner">Computing Science graduate student at the University of Alberta, focused on how generative AI regulation gets put into practice in education and healthcare.</p>
+
+      <a class="button" href="mailto:jpana@ualberta.ca?subject=Fall%2FWinter%20co-op%20term">Email me about a fall/winter co-op term</a>
+      <span class="button-note">jpana@ualberta.ca</span>
+
+      <p class="now"><strong>Now:</strong> <mark>[What are you working on this month?]</mark></p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= FEATURED ================= -->
+    <section id="featured" aria-labelledby="featured-title">
+      <div class="wrap">
+        <h2 id="featured-title">Featured</h2>
+        <div class="featured-list">
+
+          <article class="card">
+            <h3>Graduate Teaching Assistant</h3>
+            <p class="meta">University of Alberta · <mark>[Dates?]</mark></p>
+            <dl>
+              <dt>The problem</dt>
+              <dd><mark>[What problem did students or the course have that you worked on?]</mark></dd>
+              <dt>What I decided, and why</dt>
+              <dd><mark>[What did you decide here, and why?]</mark></dd>
+              <dt>The result</dt>
+              <dd><mark>[What changed because of it?]</mark></dd>
+            </dl>
+          </article>
+
+          <article class="card">
+            <h3>Undergraduate Research Assistant</h3>
+            <p class="meta">University of Alberta · <mark>[Dates?]</mark></p>
+            <dl>
+              <dt>The problem</dt>
+              <dd><mark>[What research question or problem did you work on?]</mark></dd>
+              <dt>What I decided, and why</dt>
+              <dd><mark>[What did you decide here, and why?]</mark></dd>
+              <dt>The result</dt>
+              <dd><mark>[What came out of it — a paper, tool, finding?]</mark></dd>
+            </dl>
+          </article>
+
+          <article class="card">
+            <h3>Software Developer</h3>
+            <p class="meta"><mark>[Name of the tutoring company?]</mark> · <mark>[Dates?]</mark></p>
+            <dl>
+              <dt>The problem</dt>
+              <dd><mark>[What problem did the company or its users have?]</mark></dd>
+              <dt>What I decided, and why</dt>
+              <dd><mark>[What did you decide here, and why?]</mark></dd>
+              <dt>The result</dt>
+              <dd><mark>[What changed for students, tutors or the business?]</mark></dd>
+            </dl>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORK ================= -->
+    <section id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 id="work-title">Work</h2>
+        <ul class="work-list">
+          <!-- ADD NEW WORK HERE: copy one item, paste it at the top, edit it -->
+          <li>
+            <span class="work-date"><mark>[Dates?]</mark></span>
+            <span>VP Communications, Undergraduate Association of Computing Science, University of Alberta</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title">About</h2>
+        <p>I'm a full-time Computing Science graduate student at the University of Alberta. The question I keep coming back to is how generative AI regulation actually gets carried out in schools and in healthcare, not just written down. I also do nails part-time, which has taught me patience, clear communication with the person in front of me, and close attention to detail — the same things a project needs to land well.</p>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Contact</h2>
+        <ul class="contact-links">
+          <li><a href="mailto:jpana@ualberta.ca">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/jadepana/" rel="me">LinkedIn</a></li>
+          <li><a href="https://github.com/jaderpana" rel="me">GitHub</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">Jade Pana · Edmonton, Alberta</div>
+  </footer>
+
+</body>
+</html>
